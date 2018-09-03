@@ -1,0 +1,46 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+  <div class="container" > 
+
+
+
+  <form >
+      <!-- [formGroup]="form" -->
+
+      <p>Try Anakin, Alderaan, Hutt depending on your query.</p>
+    <label for="category-select">Choose a category:</label>
+
+    
+    <select id="category-select" #category> 
+      <!-- formControlName="category" -->
+      <option value="" >Please choose an option</option>
+      <option value="people">People</option>
+      <option value="planet">Planet</option>
+      <option value="specie">Specie</option>
+    </select>
+    
+    <input type="text" name="" id="inputt" #input>
+    <input type="submit" value="Consulta" (click)="makeQuery()">
+
+  
+    <!-- <pre>{{ form.value | json }}</pre> -->
+</form>
+
+
+</div>
+
+
+
+</body>
