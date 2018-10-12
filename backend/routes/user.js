@@ -1,39 +1,42 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 //var fetch = require('node-fetch');
 
-const userInteraction = require('../models/User');
-
-
-
+const userInteraction = require("../models/User");
 
 //get query
-router.get('/queries', (req, res) => {
-  userInteraction.find()
-      .then(queriesRequest => {
-          return res.status(200).json(queriesRequest); //200: The request was fulfilled.                       
-      })
-      .catch(e => next(e))
-
+router.get("/queries", (req, res) => {
+  userInteraction
+    .find()
+    .then(queriesRequest => {
+      return res.status(200).json(queriesRequest); //200: The request was fulfilled.
+    })
+    .catch(e => next(e));
 });
 
 /* CREATE a new query REST API. */
-router.post('/queries', (req, res, next) => {
+router.post("/queries", (req, res, next) => {
   const theQuery = new userInteraction({
     apiQuestion: req.body.apiQuestion,
-    apiAnswers: req.body.apiAnswers,
+    apiAnswers: req.body.apiAnswers
   });
 
-  theQuery.save()
-  .then(theQuery => {
-    res.json({
-      message: 'New query made!',
-      id: theQuery._id
-    });
-  })
-  .catch(error => next(error))
+  theQuery
+    .save()
+    .then(theQuery => {
+      res.json({
+        message: "New query made!",
+        id: theQuery._id
+      });
+    })
+    .catch(error => next(error));
 });
 
+/* get a new log REST API. */
 
+router.get("/logs", (req, res, next) => {
+  console.log("test logs")
+
+});
 
 module.exports = router;

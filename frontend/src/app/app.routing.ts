@@ -1,11 +1,10 @@
-import { Routes } from '@angular/router';
+import { Routes } from "@angular/router";
 
-import { QueryingComponent } from './querying/querying.component';
-import { QueryDetailComponent } from './query-detail/query-detail.component';
-
+import { QueryingComponent } from "./querying/querying.component";
+import { QueryDetailComponent } from "./query-detail/query-detail.component";
 
 export const routes: Routes = [
-    { path: '', component: QueryingComponent },
-    { path: 'queries/:id', component: QueryDetailComponent },
-    { path: '**', redirectTo: '' }
+  { path: "", component: QueryingComponent },
+  { path: "queries/:id", component: QueryDetailComponent },
+  { path: "**", redirectTo: "" }
 ];
